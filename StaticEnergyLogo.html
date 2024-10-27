@@ -2,48 +2,35 @@
 <html>
 <head>
     <title>Email Signature</title>
-    <style>
-        /* CSS Reset for <p> tags to control spacing */
-        #signature p {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            color: #000;
-            line-height: 1.2;
-            margin: 0;             /* Reset default margin */
-            padding: 0;            /* Reset default padding */
-            margin-top: 4px;       /* Fine-tuned spacing between lines */
-            margin-bottom: 4px;
-        }
-        #signature {
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
     <div id="signature">
         <p>Name</p>
         <p>Title</p>
         <p>Phone Number</p>
-        <img src="https://i.imgur.com/MuAt0Eq.png" height="40" style="height:40px; width:auto;" alt="Static Energy">
+        <img src="https://i.imgur.com/MuAt0Eq.png" height="40" alt="Static Energy">
     </div>
 
     <button onclick="copySignature()">Copy Email Signature</button>
 
     <script>
         function copySignature() {
+            // Create a hidden container to hold the signature's rendered content
             const tempDiv = document.createElement("div");
             tempDiv.style.position = "absolute";
             tempDiv.style.left = "-9999px";
             tempDiv.innerHTML = document.getElementById("signature").innerHTML;
             document.body.appendChild(tempDiv);
 
+            // Copy the contents
             const range = document.createRange();
             range.selectNodeContents(tempDiv);
             const selection = window.getSelection();
             selection.removeAllRanges();
             selection.addRange(range);
-
             document.execCommand("copy");
+
+            // Clean up
             document.body.removeChild(tempDiv);
             selection.removeAllRanges();
 
