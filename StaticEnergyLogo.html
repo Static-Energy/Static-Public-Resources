@@ -3,24 +3,34 @@
 <head>
     <title>Email Signature</title>
     <style>
-        /* Styling applied to signature */
-        #signature {
+        /* Reset default body margins and padding */
+        body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
-            font-size: 14px;
+        }
+        /* Styling for the signature */
+        #signature {
             color: #000;
-            line-height: 1.2;
+            margin: 0;
+            padding: 0;
         }
         #signature p {
-            margin: 4px 0;
+            margin: 4px 0; /* Adjust as needed for line spacing */
+        }
+        /* Style for name with brand color */
+        #signature .name {
+            color: #33AFFF; /* Brand blue color */
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div id="signature">
-        <p>Your Name</p>
+        <p class="name">Your Name</p>
         <p>Your Title</p>
+        <p>(Your) Phone - Number</p>
         <img src="https://i.imgur.com/MuAt0Eq.png" height="40" style="height:40px; width:auto;" alt="Static Energy">
-        <p>Your Phone Number</p>
     </div>
 </body>
 </html>
