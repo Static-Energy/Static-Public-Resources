@@ -14,24 +14,25 @@
             color: #000;
             margin: 0;
             padding: 0;
-            font-size: 13px; /* Smaller font size */
         }
         #signature p {
-            margin: 2px 0; /* Smaller line spacing */
+            margin: 0; /* Remove margin between lines */
+            line-height: 1.2; /* Relative line height for Gmail default */
         }
         /* Style for name with brand color */
         #signature .name {
             color: #33AFFF; /* Brand blue color */
             font-weight: bold;
-            font-size: 14px; /* Slightly larger font for the name */
+            font-size: 14px;
+            line-height: 1.2; /* Match Gmail default */
         }
     </style>
 </head>
 <body>
     <div id="signature">
         <p class="name">Your Name</p>
-        <p>Your Title</p>
-        <p>(Your) Phone - Number</p>
+        <p style="font-size: 13px;">Your Title</p>
+        <p style="font-size: 13px;">(Your) Phone - Number</p>
         <img src="https://i.imgur.com/MuAt0Eq.png" height="40" style="height:40px; width:auto;" alt="Static Energy">
     </div>
 </body>
